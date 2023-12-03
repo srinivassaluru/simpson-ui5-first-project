@@ -1,0 +1,429 @@
+<mvc:View controllerName="DynamicChart.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:viz.data="sap.viz.ui5.data" height="100%" xmlns:viz="sap.viz.ui5.controls"
+	xmlns:suite="sap.suite.ui.commons" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:layout="sap.ui.layout"
+	xmlns:fb="sap.ui.comp.filterbar" xmlns:core="sap.ui.core" xmlns:f="sap.f" xmlns:card="sap.f.cards">
+	<Page title="{i18n>title}" backgroundDesign="Solid">
+		<content>
+			<fb:FilterBar id="FilterBar" clear="onReset" reset="onReset" showRestoreButton="false" search="applyFilter" showClearButton="true"
+				showClearOnFB="true" showGoOnFB="false" filterBarExpanded="true">
+				<fb:filterGroupItems>
+					<fb:FilterGroupItem groupName="G1" name="Year" label="Select Year" visibleInFilterBar="true">
+						<fb:control>
+							<!--<HBox>-->
+							<!--<CheckBox selected="false"></CheckBox>-->
+							<Select>
+								<items>
+									<core:Item text="2023"></core:Item>
+								</items>
+							</Select>
+							<!--</HBox>-->
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem groupName="G1" name="Date" label="Select Date" visibleInFilterBar="true">
+						<fb:control>
+							<DatePicker id="DP2" value="{ 'path':'/valueDP2', 'type':'sap.ui.model.type.Date', 'formatOptions': { 'pattern': 'yyyy-MM-dd' } }"
+								change="handleChange"/>
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem groupName="G1" name="Month" label="Select Month" visibleInFilterBar="true">
+						<fb:control>
+							<!--<HBox>-->
+							<!--<CheckBox selected="true"></CheckBox>-->
+							<Select selectedKey="12" change="handleSelectionMonthChange">
+								<items>
+									<core:Item text="January" key="0"></core:Item>
+									<core:Item text="Feburary" key="1"></core:Item>
+									<core:Item text="March" key="2"></core:Item>
+									<core:Item text="April" key="3"></core:Item>
+									<core:Item text="May" key="4"></core:Item>
+									<core:Item text="June" key="5"></core:Item>
+									<core:Item text="July" key="6"></core:Item>
+									<core:Item text="Aug" key="7"></core:Item>
+									<core:Item text="September" key="8"></core:Item>
+									<core:Item text="Octomber" key="9"></core:Item>
+									<core:Item text="November" key="10"></core:Item>
+									<core:Item text="December" key="11"></core:Item>
+								</items>
+							</Select>
+							<!--</HBox>-->
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem groupName="G1" name="Plants" label="Select Plants" visibleInFilterBar="true">
+						<fb:control>
+							<MultiComboBox showSelectAll="true" selectedKeys="0,1,2,3" showClearIcon="true" selectionChange="handleSelectionChange">
+								<core:Item text="ANNA SALAI PLANT" key="0"/>
+								<core:Item text="SEMBIAM PLANT" key="1"/>
+								<core:Item text="KUMBAKONAM PLANT" key="2"/>
+								<core:Item text="CUMMINS B3.3" key="3"/>
+							</MultiComboBox>
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem groupName="G1" name="SelectCustomer" label="Select Customer" visibleInFilterBar="true">
+						<fb:control>
+							<ComboBox>
+								<core:Item text="TAFE"/>
+								<core:Item text="TMTL"/>
+								<core:Item text="CNH"/>
+								<core:Item text="CIL-PH"/>
+								<core:Item text="CIL-CH"/>
+							</ComboBox>
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem groupName="G1" name="Category" label="Select Category" visibleInFilterBar="true">
+						<fb:control>
+							<ComboBox id="category" change="handleCatChange" selectedKey="Plan">
+								<core:Item text="Plan" key="Plan"/>
+								<core:Item text="Actual" key="Actual"/>
+								<core:Item text="Despatch"/>
+								<core:Item text="Semifinished"/>
+							</ComboBox>
+						</fb:control>
+					</fb:FilterGroupItem>
+				</fb:filterGroupItems>
+			</fb:FilterBar>
+			<Panel expanded="true" expandable="true" headerText="Plant Wise Data">
+				<layout:BlockLayout>
+					<layout:BlockLayoutRow>
+						<layout:BlockLayoutCell class="customCellImageBackground">
+							<suite:ChartContainer showFullScreen="true" autoAdjustHeight="true" stretch="true">
+								<suite:content>
+									<suite:ChartContainerContent icon="sap-icon://line-chart" title="ACTUAL">
+										<suite:content>
+											<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}" width="100%" vizType='pie'>
+												<viz:dataset>
+													<viz.data:FlattenedDataset data="{/milk}">
+														<viz.data:dimensions>
+															<viz.data:DimensionDefinition name="Store Name" value="{Store Name}"/>
+														</viz.data:dimensions>
+														<viz.data:measures>
+															<viz.data:MeasureDefinition name="Sales" value="{Sales}"/>
+															<viz.data:MeasureDefinition name="Production" value="{Production}"/>
+														</viz.data:measures>
+													</viz.data:FlattenedDataset>
+												</viz:dataset>
+												<viz:feeds>
+													<viz.feeds:FeedItem uid="size" type="Measure" values="Sales"/>
+													<viz.feeds:FeedItem uid="size" type="Measure" values="Production"/>
+													<viz.feeds:FeedItem uid="color" type="Dimension" values="Store Name"/>
+												</viz:feeds>
+											</viz:VizFrame>
+										</suite:content>
+									</suite:ChartContainerContent>
+									<suite:ChartContainerContent icon="sap-icon://line-chart" title="ACTUAL">
+										<suite:content>
+											<Table id="idVizFrameTable" items="{/milk}">
+												<items>
+													<ColumnListItem>
+														<cells>
+															<Text text="{Sales}"></Text>
+														</cells>
+													</ColumnListItem>
+												</items>
+												<columns>
+													<Column>
+														<Text text="Sales"></Text>
+													</Column>
+												</columns>
+											</Table>
+										</suite:content>
+									</suite:ChartContainerContent>
+								</suite:content>
+							</suite:ChartContainer>
+						</layout:BlockLayoutCell>
+						<layout:BlockLayoutCell class="customCellImageBackground">
+							<suite:ChartContainer showFullScreen="true" autoAdjustHeight="true" stretch="true">
+								<suite:content>
+									<suite:ChartContainerContent icon="sap-icon://line-chart" title="ACTUAL">
+										<suite:content>
+											<!--<viz:Popover id="idPopOver1"></viz:Popover>-->
+											<viz:VizFrame id="idVizFrame1" uiConfig="{applicationSet:'fiori'}" height='100%' width="100%" vizType='stacked_bar'
+												selectData="handleSelectData">
+												<viz:dataset>
+													<viz.data:FlattenedDataset data="{/milk}">
+														<viz.data:dimensions>
+															<viz.data:DimensionDefinition name="Store Name" value="{Store Name}"/>
+														</viz.data:dimensions>
+														<viz.data:measures>
+															<viz.data:MeasureDefinition name="ASSY" value="{ASSY}"/>
+															<viz.data:MeasureDefinition name="DELY" value="{DELY}"/>
+															<viz.data:MeasureDefinition name="DESP" value="{DESP}"/>
+															<viz.data:MeasureDefinition name="Cost1" value="{Cost1}"/>
+														</viz.data:measures>
+													</viz.data:FlattenedDataset>
+												</viz:dataset>
+												<viz:feeds>
+													<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="ASSY"/>
+													<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="DELY"/>
+													<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="DESP"/>
+													<viz.feeds:FeedItem id="feedCategoryAxis1" uid="categoryAxis" type="Dimension" values="Store Name"/>
+												</viz:feeds>
+											</viz:VizFrame>
+										</suite:content>
+									</suite:ChartContainerContent>
+								</suite:content>
+							</suite:ChartContainer>
+						</layout:BlockLayoutCell>
+					</layout:BlockLayoutRow>
+					<layout:BlockLayoutRow>
+						<layout:BlockLayoutCell class="customCellImageBackground">
+							<suite:ChartContainer showFullScreen="true" autoAdjustHeight="true" stretch="true">
+								<suite:content>
+									<suite:ChartContainerContent icon="sap-icon://line-chart" title="ACTUAL">
+										<suite:content>
+											<viz:Popover id="idPopOver2"></viz:Popover>
+											<viz:VizFrame id="idVizFrame2" uiConfig="{applicationSet:'fiori'}" width="100%" vizType='donut'>
+												<viz:dataset>
+													<viz.data:FlattenedDataset data="{/milk}">
+														<viz.data:dimensions>
+															<viz.data:DimensionDefinition name="Store Name" value="{Store Name}"/>
+														</viz.data:dimensions>
+														<viz.data:measures>
+															<viz.data:MeasureDefinition name="Revenue" value="{Revenue}"/>
+														</viz.data:measures>
+													</viz.data:FlattenedDataset>
+												</viz:dataset>
+												<viz:feeds>
+													<viz.feeds:FeedItem uid="size" type="Measure" values="Revenue"/>
+													<viz.feeds:FeedItem uid="color" type="Dimension" values="Store Name"/>
+												</viz:feeds>
+											</viz:VizFrame>
+										</suite:content>
+									</suite:ChartContainerContent>
+								</suite:content>
+							</suite:ChartContainer>
+						</layout:BlockLayoutCell>
+						<layout:BlockLayoutCell class="customCellImageBackground">
+							<suite:ChartContainer showFullScreen="true" autoAdjustHeight="true" stretch="true">
+								<suite:content>
+									<suite:ChartContainerContent icon="sap-icon://line-chart" title="ACTUAL">
+										<suite:content>
+											<viz:Popover id="idPopOver3"></viz:Popover>
+											<viz:VizFrame id="idVizFrame3" uiConfig="{applicationSet:'fiori'}" width="100%" vizType='stacked_column' selectData="handleSelectData">
+												<viz:dataset>
+													<viz.data:FlattenedDataset data="{/milk}">
+														<viz.data:dimensions>
+															<viz.data:DimensionDefinition name="Week" value="{Week}"/>
+														</viz.data:dimensions>
+														<viz.data:measures>
+															<viz.data:MeasureDefinition name="Cost1" value="{ASSY}"/>
+															<viz.data:MeasureDefinition name="Cost2" value="{DELY}"/>
+															<viz.data:MeasureDefinition name="Cost3" value="{DESP}"/>
+														</viz.data:measures>
+													</viz.data:FlattenedDataset>
+												</viz:dataset>
+												<viz:feeds>
+													<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Cost3,Cost2,Cost1"/>
+													<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Week"/>
+												</viz:feeds>
+											</viz:VizFrame>
+										</suite:content>
+									</suite:ChartContainerContent>
+								</suite:content>
+							</suite:ChartContainer>
+						</layout:BlockLayoutCell>
+					</layout:BlockLayoutRow>
+				</layout:BlockLayout>
+			</Panel>
+			<Panel headerText="Stock" expand="true" expandable="true">
+				<layout:BlockLayout>
+					<layout:BlockLayoutRow>
+						<layout:BlockLayoutCell class="customCellImageBackground">
+							<suite:ChartContainer showFullScreen="true" autoAdjustHeight="true" stretch="true">
+								<suite:content>
+									<suite:ChartContainerContent icon="sap-icon://line-chart" title="ACTUAL">
+										<suite:content>
+											<viz:VizFrame id="idVizFrameStock" uiConfig="{applicationSet:'fiori'}" width="100%" vizType='pie'>
+												<viz:dataset>
+													<viz.data:FlattenedDataset data="{/milk}">
+														<viz.data:dimensions>
+															<viz.data:DimensionDefinition name="Store Name" value="{Store Name}"/>
+														</viz.data:dimensions>
+														<viz.data:measures>
+															<viz.data:MeasureDefinition name="Sales" value="{Sales}"/>
+															<viz.data:MeasureDefinition name="Production" value="{Production}"/>
+														</viz.data:measures>
+													</viz.data:FlattenedDataset>
+												</viz:dataset>
+												<viz:feeds>
+													<viz.feeds:FeedItem uid="size" type="Measure" values="Sales"/>
+													<viz.feeds:FeedItem uid="size" type="Measure" values="Production"/>
+													<viz.feeds:FeedItem uid="color" type="Dimension" values="Store Name"/>
+												</viz:feeds>
+											</viz:VizFrame>
+										</suite:content>
+									</suite:ChartContainerContent>
+								</suite:content>
+							</suite:ChartContainer>
+						</layout:BlockLayoutCell>
+					</layout:BlockLayoutRow>
+				</layout:BlockLayout>
+			</Panel>
+			<Panel headerText="Comparison" expand="true" expandable="true">
+				<layout:BlockLayout>
+					<layout:BlockLayoutRow>
+						<layout:BlockLayoutCell class="customCellImageBackground">
+							<suite:ChartContainer showFullScreen="true" autoAdjustHeight="true" stretch="true">
+								<suite:content>
+									<suite:ChartContainerContent icon="sap-icon://line-chart" title="ACTUAL">
+										<suite:content>
+											<viz:VizFrame id="idVizFrameStock11" uiConfig="{applicationSet:'fiori'}" width="100%" vizType='pie'>
+												<viz:dataset>
+													<viz.data:FlattenedDataset data="{/milk}">
+														<viz.data:dimensions>
+															<viz.data:DimensionDefinition name="Store Name" value="{Store Name}"/>
+														</viz.data:dimensions>
+														<viz.data:measures>
+															<viz.data:MeasureDefinition name="Sales" value="{Sales}"/>
+															<viz.data:MeasureDefinition name="Production" value="{Production}"/>
+														</viz.data:measures>
+													</viz.data:FlattenedDataset>
+												</viz:dataset>
+												<viz:feeds>
+													<viz.feeds:FeedItem uid="size" type="Measure" values="Sales"/>
+													<viz.feeds:FeedItem uid="size" type="Measure" values="Production"/>
+													<viz.feeds:FeedItem uid="color" type="Dimension" values="Store Name"/>
+												</viz:feeds>
+											</viz:VizFrame>
+										</suite:content>
+									</suite:ChartContainerContent>
+								</suite:content>
+							</suite:ChartContainer>
+						</layout:BlockLayoutCell>
+						<layout:BlockLayoutCell class="customCellImageBackground">
+							<suite:ChartContainer showFullScreen="true" autoAdjustHeight="true" stretch="true">
+								<suite:content>
+									<suite:ChartContainerContent icon="sap-icon://line-chart" title="ACTUAL">
+										<suite:content>
+											<viz:VizFrame id="idVizFrameStock122" uiConfig="{applicationSet:'fiori'}" width="100%" vizType='pie'>
+												<viz:dataset>
+													<viz.data:FlattenedDataset data="{/milk}">
+														<viz.data:dimensions>
+															<viz.data:DimensionDefinition name="Store Name" value="{Store Name}"/>
+														</viz.data:dimensions>
+														<viz.data:measures>
+															<viz.data:MeasureDefinition name="Sales" value="{Sales}"/>
+															<viz.data:MeasureDefinition name="Production" value="{Production}"/>
+														</viz.data:measures>
+													</viz.data:FlattenedDataset>
+												</viz:dataset>
+												<viz:feeds>
+													<viz.feeds:FeedItem uid="size" type="Measure" values="Sales"/>
+													<viz.feeds:FeedItem uid="size" type="Measure" values="Production"/>
+													<viz.feeds:FeedItem uid="color" type="Dimension" values="Store Name"/>
+												</viz:feeds>
+											</viz:VizFrame>
+										</suite:content>
+									</suite:ChartContainerContent>
+								</suite:content>
+							</suite:ChartContainer>
+						</layout:BlockLayoutCell>
+					</layout:BlockLayoutRow>
+				</layout:BlockLayout>
+			</Panel>
+			<!--<suite:ChartContainer showFullScreen="true" autoAdjustHeight="true" stretch="true">-->
+			<!--	<suite:content>-->
+			<!--		<suite:ChartContainerContent icon="sap-icon://legend" title="PLAN">-->
+			<!--			<suite:content>-->
+			<!--				<viz:Popover id="idPopOver"></viz:Popover>-->
+			<!--<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}" height='100%' width="100%" vizType='pie'>-->
+			<!--	<viz:dataset>-->
+			<!--		<viz.data:FlattenedDataset data="{/milk}">-->
+			<!--			<viz.data:dimensions>-->
+			<!--				<viz.data:DimensionDefinition name="Store Name" value="{Store Name}"/>-->
+			<!--			</viz.data:dimensions>-->
+			<!--			<viz.data:measures>-->
+			<!--				<viz.data:MeasureDefinition name="Sales" value="{Sales}"/>-->
+			<!--				<viz.data:MeasureDefinition name="Production" value="{Production}"/>-->
+			<!--			</viz.data:measures>-->
+			<!--		</viz.data:FlattenedDataset>-->
+			<!--	</viz:dataset>-->
+			<!--	<viz:feeds>-->
+			<!--		<viz.feeds:FeedItem uid="size" type="Measure" values="Sales"/>-->
+			<!--		<viz.feeds:FeedItem uid="size" type="Measure" values="Production"/>-->
+			<!--		<viz.feeds:FeedItem uid="color" type="Dimension" values="Store Name"/>-->
+			<!--	</viz:feeds>-->
+			<!--</viz:VizFrame>-->
+			<!--			</suite:content>-->
+			<!--		</suite:ChartContainerContent>-->
+			<!--		<suite:ChartContainerContent icon="sap-icon://line-chart" title="ACTUAL">-->
+			<!--			<suite:content>-->
+			<!--				<viz:Popover id="idPopOver1"></viz:Popover>-->
+			<!--				<viz:VizFrame id="idVizFrame1" uiConfig="{applicationSet:'fiori'}" height='100%' width="100%" vizType='stacked_bar'-->
+			<!--					selectData="handleSelectData">-->
+			<!--					<viz:dataset>-->
+			<!--						<viz.data:FlattenedDataset data="{/milk}">-->
+			<!--							<viz.data:dimensions>-->
+			<!--								<viz.data:DimensionDefinition name="Store Name" value="{Store Name}"/>-->
+			<!--							</viz.data:dimensions>-->
+			<!--							<viz.data:measures>-->
+			<!--								<viz.data:MeasureDefinition name="ASSY" value="{ASSY}"/>-->
+			<!--								<viz.data:MeasureDefinition name="DELY" value="{DELY}"/>-->
+			<!--								<viz.data:MeasureDefinition name="DESP" value="{DESP}"/>-->
+			<!--<viz.data:MeasureDefinition name="Cost1" value="{Cost1}"/>-->
+			<!--							</viz.data:measures>-->
+			<!--						</viz.data:FlattenedDataset>-->
+			<!--					</viz:dataset>-->
+			<!--					<viz:feeds>-->
+			<!--						<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="ASSY"/>-->
+			<!--						<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="DELY"/>-->
+			<!--						<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="DESP"/>-->
+			<!--						<viz.feeds:FeedItem id="feedCategoryAxis1" uid="categoryAxis" type="Dimension" values="Store Name"/>-->
+			<!--					</viz:feeds>-->
+			<!--				</viz:VizFrame>-->
+			<!--			</suite:content>-->
+			<!--		</suite:ChartContainerContent>-->
+			<!--		<suite:ChartContainerContent icon="sap-icon://donut-chart" title="DESPATCH">-->
+			<!--			<suite:content>-->
+			<!--				<viz:Popover id="idPopOver2"></viz:Popover>-->
+			<!--				<viz:VizFrame id="idVizFrame2" uiConfig="{applicationSet:'fiori'}" height='100%' width="100%" vizType='donut'>-->
+			<!--					<viz:dataset>-->
+			<!--						<viz.data:FlattenedDataset data="{/milk}">-->
+			<!--							<viz.data:dimensions>-->
+			<!--								<viz.data:DimensionDefinition name="Store Name" value="{Store Name}"/>-->
+			<!--							</viz.data:dimensions>-->
+			<!--							<viz.data:measures>-->
+			<!--								<viz.data:MeasureDefinition name="Revenue" value="{Revenue}"/>-->
+			<!--							</viz.data:measures>-->
+			<!--						</viz.data:FlattenedDataset>-->
+			<!--					</viz:dataset>-->
+			<!--					<viz:feeds>-->
+			<!--						<viz.feeds:FeedItem uid="size" type="Measure" values="Revenue"/>-->
+			<!--						<viz.feeds:FeedItem uid="color" type="Dimension" values="Store Name"/>-->
+			<!--					</viz:feeds>-->
+			<!--				</viz:VizFrame>-->
+			<!--			</suite:content>-->
+			<!--		</suite:ChartContainerContent>-->
+			<!--		<suite:ChartContainerContent icon="sap-icon://vertical-bar-chart" title="SEMI FINISHED">-->
+			<!--			<suite:content>-->
+			<!--<viz:Popover id="idPopOver3"></viz:Popover>-->
+			<!--				<viz:VizFrame id="idVizFrame3" uiConfig="{applicationSet:'fiori'}" height='100%' width="100%" vizType='stacked_column'-->
+			<!--					selectData="handleSelectData">-->
+			<!--					<viz:dataset>-->
+			<!--						<viz.data:FlattenedDataset data="{/milk}">-->
+			<!--							<viz.data:dimensions>-->
+			<!--								<viz.data:DimensionDefinition name="Week" value="{Week}"/>-->
+			<!--							</viz.data:dimensions>-->
+			<!--							<viz.data:measures>-->
+			<!--								<viz.data:MeasureDefinition name="Cost1" value="{ASSY}"/>-->
+			<!--								<viz.data:MeasureDefinition name="Cost2" value="{DELY}"/>-->
+			<!--								<viz.data:MeasureDefinition name="Cost3" value="{DESP}"/>-->
+			<!--							</viz.data:measures>-->
+			<!--						</viz.data:FlattenedDataset>-->
+			<!--					</viz:dataset>-->
+			<!--					<viz:feeds>-->
+			<!--						<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Cost3,Cost2,Cost1"/>-->
+			<!--						<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Week"/>-->
+			<!--					</viz:feeds>-->
+			<!--				</viz:VizFrame>-->
+			<!--			</suite:content>-->
+			<!--		</suite:ChartContainerContent>-->
+			<!--		<suite:ChartContainerContent icon="sap-icon://table-view" title="SEMI FINISHED">-->
+			<!--			<suite:content>-->
+			<!--				<Table></Table>-->
+			<!--			</suite:content>-->
+			<!--		</suite:ChartContainerContent>-->
+			<!--	</suite:content>-->
+			<!--</suite:ChartContainer>-->
+		</content>
+	</Page>
+</mvc:View>

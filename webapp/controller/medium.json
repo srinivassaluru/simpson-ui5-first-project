@@ -1,0 +1,32 @@
+{
+  "milk": [{
+        "Store Name": "TAFE",
+        "Revenue": 428214.13,
+        "Cost": 94383.52,
+        "Consumption": 76855.15368
+    },
+    {
+        "Store Name": "TMTL",
+        "Revenue": 1722148.36,
+        "Cost": 274735.17,
+        "Consumption": 310292.22
+    },
+    {
+        "Store Name": "CNH",
+        "Revenue": 1331176.706884,
+        "Cost": 233160.58,
+        "Consumption": 143432.18
+    },
+    {
+        "Store Name": "CIL-PH",
+        "Revenue": 1878466.82,
+        "Cost": 235072.19,
+        "Consumption": 487910.26
+    },
+    {
+        "Store Name": "CIL-CH",
+        "Revenue": 3326251.94,
+        "Cost": 582543.16,
+        "Consumption": 267185.27
+    }]
+}

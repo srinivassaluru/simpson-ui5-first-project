@@ -1,0 +1,21 @@
+/* Enter your custom styles here */
+
+.sapMShellGlobalOuterBackground {
+    background: #062c3f !important;
+}
+
+.sapMIBar.sapMHeader-CTX {
+    background-color: #062c3f !important;
+}
+
+.sapUiCompFilterBar, .sapMTB.sapMTB-Transparent-CTX, .sapSuiteUiCommonsChartContainerChartArea {
+    background-color: #386a83 !important;
+}
+
+.sapMLabel, .sapMIBar-CTX .sapMTitle, .sapMBtnBack, .sapMBtnTransparent{
+	color: #fff !important;
+}
+
+.sapUiBlockCellContent{
+	padding:unset !important;
+}
