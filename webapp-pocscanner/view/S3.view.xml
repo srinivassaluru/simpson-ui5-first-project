@@ -1,0 +1,55 @@
+<mvc:View controllerName="POScanner.controller.S3" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:ndc="sap.ndc">
+	<Page title="Inward Scanning" navButtonPress="handleNavBack" showNavButton="true">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<Label text="Group Id"/>
+				<Select width="100%" forceSelection="true" items="{/LIST_G_IDSet}" id="groupId">
+					<items>
+						<core:Item text="{GrpId}" key="{GrpId}"/>
+					</items>
+				</Select>
+				<!--<Label text="EAN Code"/>-->
+				<Input placeholder="EAN Code" id="eanCode" type="Number" change="handleEANChange"></Input>
+				<!--<Label text="Article Code"/>-->
+				<Input placeholder="Article Code" id="articleCode" type="Number" change="handleArticleChange" enabled="false"></Input>
+				<!--<Label text="Description"/>-->
+				<TextArea editable="false" placeholder="Description" id="desc" width="100%"></TextArea>
+				<!--<Label text="Invoice Number"/>-->
+				<Input placeholder="Invoice Number" id="invoiceNumber" required="true" maxLength="16"></Input>
+				<!--<Label text="MRP"/>-->
+				<Input placeholder="MRP" id="mrpNumber" type="Number"></Input>
+				<!--<Label text="Mfg. Date"/>-->
+				<DatePicker placeholder="Mfg. Date" id="mfgDate" displayFormat="dd-MM-yyyy" valueFormat="dd-MM-yyyy" change="handleMfgDateChange"></DatePicker>
+				<!--<Label text="Exp. Date"/>-->
+				<DatePicker placeholder="Exp. Date" id="expDate" displayFormat="dd-MM-yyyy" valueFormat="dd-MM-yyyy" change="handleExpDateChange"></DatePicker>
+				<!--<Label text="Shelf Life"/>-->
+				<Input enabled="false" placeholder="Shelf Life" id="shelfLife"></Input>
+				<!--<Label text="Case Size"/>-->
+				<FlexBox direction="Row">
+					<Input placeholder="Case Size" liveChange="handleQty" id="caseSize" type="Number" required="true"></Input>
+					<!--<Label text="Box Size"/>-->
+					<Input placeholder="Box Size" id="boxSize" required="true" class="sapUiSmallMarginBegin" width="90%" type="Number" liveChange="handleQty"></Input>
+				</FlexBox>
+				<!--<Label text="Qty"/>-->
+				<!--<Input editable="false" ></Input>-->
+				<FlexBox direction="Row" class="sapUiTinyMarginTop">
+					<Label text="Qty:"></Label>
+					<Label text="{localModel>/totalQty} Pcs" class="sapUiTinyMarginBegin" width="90%"></Label>
+				</FlexBox>
+				<!--<Label text="Tihi"/>-->
+				<Input placeholder="Tihi" id="tihi" maxLength="4"></Input>
+			</VBox>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button text="Save" type="Emphasized" press="handleSave"></Button>
+					<Button text="Skip" type="Reject" press="handleClear"></Button>
+					<Button text="Summary" type="Emphasized" press="handleSummary"></Button>
+					<Button icon="sap-icon://home" press="handleHome"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

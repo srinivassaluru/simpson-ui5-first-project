@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="Allocation Screen">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<List id="allocationList"></List>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button text="Ok" press="handlePressOK"></Button>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

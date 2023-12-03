@@ -1,0 +1,25 @@
+<mvc:View controllerName="POScanner.controller.S2" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="Assign PO" navButtonPress="handleNavBack" showNavButton="true">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<Input change="handlePOChange" id="enteredPo" maxLength="10" placeholder="Enter PO"></Input>
+						<VBox alignItems="Center" class="sapUiMediumMarginTop">
+							<Button text="Assign PO" press="handleAssignPO" textDirection="LTR"></Button>
+							<Button text="Generate Group ID" press="handleGenerateId" class="sapUiSmallMarginTop"></Button>
+						</VBox>
+					</VBox>
+				</content>
+				<footer>
+					<Bar>
+						<contentRight>
+							<Button icon="sap-icon://home" press="handleHome"></Button>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

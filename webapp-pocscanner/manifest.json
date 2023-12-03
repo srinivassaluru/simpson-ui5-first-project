@@ -1,0 +1,175 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "POScanner",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZD_MRP_PROJECT_SRV": {
+				"uri": "/sap/opu/odata/sap/ZD_MRP_PROJECT_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "POScanner.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "POScanner.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "None"
+				},
+				"dataSource": "ZD_MRP_PROJECT_SRV",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"type": "View",
+				"viewType": "XML",
+				"viewPath": "POScanner.view",
+				"controlId": "appId",
+				"controlAggregation": "pages"
+			},
+			"routes": [
+				{
+					"name": "firstScreen",
+					"pattern": "",
+					"target": "firstTarget"
+				},
+				{
+					"name": "secondScreen",
+					"pattern": "assignPO",
+					"target": "secondTarget"
+				},
+				{
+					"name": "thirdScreen",
+					"pattern": "inwardScanning/:source:",
+					"target": "thirdTarget"
+				},
+				{
+					"name": "fourthScreen",
+					"pattern": "summary",
+					"target": "fourthTarget"
+				},
+				{
+					"name": "fifthScreen",
+					"pattern": "missing",
+					"target": "fifthTarget"
+				},
+				{
+					"name": "sixScreen",
+					"pattern": "allocations",
+					"target": "sixTarget"
+				},
+				{
+					"name": "scevenScreen",
+					"pattern": "post",
+					"target": "scevenTarget"
+				}
+			],
+			"targets": {
+				"firstTarget": {
+					"viewName": "S1",
+					"viewId": "S1"
+				},
+				"secondTarget": {
+					"viewName": "S2",
+					"viewId": "S2"
+				},
+				"thirdTarget": {
+					"viewName": "S3",
+					"viewId": "S3"
+				},
+				"fourthTarget": {
+					"viewName": "S4",
+					"viewId": "S4"
+				},
+				"fifthTarget": {
+					"viewName": "S5",
+					"viewId": "S5"
+				},
+				"sixTarget": {
+					"viewName": "S6",
+					"viewId": "S6"
+				},
+				"scevenTarget": {
+					"viewName": "S7",
+					"viewId": "S7"
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zd_mrp_fioriapp/webapp",
+		"_version": "1.1.0"
+	}
+}

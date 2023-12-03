@@ -1,0 +1,28 @@
+<mvc:View controllerName="POScanner.controller.S5" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page title="Allocation" navButtonPress="handleNavBack" showNavButton="true">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<Label></Label>
+				<Select selectedKey="{Country}">
+					<items>
+						<core:Item text="England" key="England"/>
+						<core:Item text="Germany" key="Germany"/>
+						<core:Item text="USA" key="USA"/>
+					</items>
+				</Select>
+			</VBox>
+			<Table></Table>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button text="Save" type="Emphasized"></Button>
+					<Button text="Skip" type="Reject"></Button>
+					<Button text="Summary" type="Emphasized"></Button>
+					<Button icon="sap-icon://home" press="handleHome"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

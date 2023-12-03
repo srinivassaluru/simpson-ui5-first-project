@@ -1,0 +1,52 @@
+<mvc:View controllerName="POScanner.controller.S4" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page title="Summary" navButtonPress="handleNavBack" showNavButton="true">
+		<content>
+			<VBox class="sapUiTinyMargin">
+				<Label></Label>
+				<Select width="100%" items="{localModel>/LIST_G_IDSet}" id="groupId" forceSelection="true" change="handleSelectionChange">
+					<items>
+						<core:Item text="{localModel>GrpId}" key="{localModel>GrpId}"/>
+					</items>
+				</Select>
+				<!--<Label text="PO Number"></Label>-->
+				<!--<Input editable="false"></Input>-->
+			</VBox>
+			<Table id="summaryTable" items="{ path : '/SUMMARY_LISTSet', sorter: { path: 'PoNo', group: true } }" mode="SingleSelectLeft">
+				<columns>
+					<Column>
+						<Text text="Article"></Text>
+					</Column>
+					<Column>
+						<Text text="PO Qty"></Text>
+					</Column>
+					<Column>
+						<Text text="Scan Qty"></Text>
+					</Column>
+					<Column>
+						<Text text="Miss Qty"></Text>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{Article}"></Text>
+							<Text text="{PoQty}"></Text>
+							<Text text="{ScanQty}"></Text>
+							<Text text="{MissQty}"></Text>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button text="Inward Scanning" type="Emphasized" press="onInwardScanning"></Button>
+					<Button text="Post" type="Emphasized" press="onPost"></Button>
+					<Button icon="sap-icon://home" press="handleHome"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

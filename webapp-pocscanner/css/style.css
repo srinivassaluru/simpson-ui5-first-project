@@ -1,0 +1,14 @@
+/* Enter your custom styles here */
+
+.sapMGTHdrTxt>.sapMText {
+    font-weight: bold !important;
+    font-size: 21px !important;
+}
+
+.sapMImageContentImageIcon.sapUiIcon {
+    color: #2b7d2b !important;
+}
+
+.sapMImageContentImageIcon.sapUiIcon {
+    font-size: 2.75rem !important;
+}

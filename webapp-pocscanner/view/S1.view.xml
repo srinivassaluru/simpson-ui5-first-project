@@ -1,0 +1,51 @@
+<mvc:View controllerName="POScanner.controller.S1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<Page title="Activity Menu">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<HBox>
+					<GenericTile class="sapUiTinyMarginTop tileLayout" header="Assign PO" press="onAssignPO" backgroundImage="sap-icon://home-share">
+						<tileContent>
+							<TileContent>
+								<content>
+									<ImageContent src="sap-icon://shipping-status"/>
+								</content>
+							</TileContent>
+						</tileContent>
+					</GenericTile>
+					<GenericTile class="sapUiSmallMarginBegin sapUiTinyMarginTop tileLayout" header="Inward Scanning" press="onInwardScanning">
+						<tileContent>
+							<TileContent>
+								<content>
+									<ImageContent src="sap-icon://cart-3"/>
+								</content>
+							</TileContent>
+						</tileContent>
+					</GenericTile>
+				</HBox>
+				<HBox class="sapUiSmallMarginTop">
+					<GenericTile class="sapUiTinyMarginTop tileLayout" header="Summary" press="onSummary">
+						<tileContent>
+							<TileContent>
+								<content>
+									<ImageContent src="sap-icon://multiselect-none"/>
+								</content>
+							</TileContent>
+						</tileContent>
+					</GenericTile>
+					<!--<GenericTile class=" sapUiTinyMarginTop tileLayout" header="Missing" press="onMissing"></GenericTile>-->
+					<!--<GenericTile class=" sapUiTinyMarginTop tileLayout" header="Allocations" press="onAllocations"></GenericTile>-->
+					<GenericTile class="sapUiSmallMarginBegin sapUiTinyMarginTop tileLayout" header="Post" press="onPost">
+						<tileContent>
+							<TileContent>
+								<content>
+									<ImageContent src="sap-icon://status-positive"/>
+								</content>
+							</TileContent>
+						</tileContent>
+					</GenericTile>
+				</HBox>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>
