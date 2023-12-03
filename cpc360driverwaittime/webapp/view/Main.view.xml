@@ -1,0 +1,206 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:fb="sap.ui.comp.filterbar" xmlns:core="sap.ui.core"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:l="sap.ui.layout" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:suite="sap.suite.ui.commons" controllerName="cp.c360DriverWaitTime.controller.Main"
+	displayBlock="true" height="100%">
+	<Page id="page" title="{i18n>title}" class="sapUiSizeCompact" showHeader="false">
+		<content>
+			<l:BlockLayout>
+				<l:BlockLayoutRow>
+					<l:BlockLayoutCell class="customCellImageBackground">
+						<fb:FilterBar id="FilterBar" clear="onReset" reset="onReset" showRestoreButton="false" search="applyFilter" showClearButton="true" showClearOnFB="true"
+							showGoOnFB="false" filterBarExpanded="true">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem groupName="G1" name="Year" label="Year" visibleInFilterBar="true">
+									<fb:control>
+										<ComboBox id="Year" items="{DateModel>/Years}" selectedKey="{DateModel>/SelectedYear}" selectionChange="reloadData">
+											<core:Item key="{DateModel>Key}" text="{DateModel>Value}"/>
+										</ComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="G1" name="Month" label="Month" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="Month" items="{DateModel>/Months}" selectedKeys="{DateModel>/SelectedMonths}" selectionChange="reloadData">
+											<core:Item key="{DateModel>Key}" text="{DateModel>Value}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="G1" name="Week" label="Week" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="Week" items="{DateModel>/Weeks}" selectedKeys="{DateModel>/SelectedWeek}" selectionChange="reloadData">
+											<core:Item key="{DateModel>Key}" text="{DateModel>AdditionalText}: {DateModel>Value}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="G1" name="Day" label="Day of Week" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="Day" items="{DateModel>/Days}" selectedKeys="{DateModel>/SelectedDay}" selectionChange="reloadData">
+											<core:Item key="{DateModel>Key}" text="{DateModel>Value}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="G1" name="Customer Location" label="Customer Location" visibleInFilterBar="true">
+									<fb:control>
+										<!--<MultiComboBox id="customerLocation" items="{custLocationModel>/}" selectedKeys="{DataModel>/SelectedCustomerLocation}"
+											selectionChange="reloadData">
+											<core:Item key="{custLocationModel>STOP_POSTAL}"
+												text="{parts: ['custLocationModel>STOP_CSTMR_NAME', 'custLocationModel>STOP_CITY', 'custLocationModel>STOP_PROV', 'custLocationModel>STOP_POSTAL'], formatter: '.getCustomerLocationText' }"/>
+										</MultiComboBox>-->
+										<!--<MultiInput width="40%" id="CustomerLocationId"
+											suggestionItems="{ path: 'custLocationModel>/',sorter: { path: 'custLocationModel>STOP_CSTMR_NAME' } }" valueHelpRequest="handleValueHelp"
+											showValueHelp="true" selectedKey="{DataModel>/SelectedCustomerLocation}" tokenUpdate="customerLocationTokenUpdate">
+											<core:Item key="{custLocationModel>STOP_CSTMR_NAME}" text="{parts: ['custLocationModel>STOP_CSTMR_NAME', 'custLocationModel>STOP_CITY', 'custLocationModel>STOP_PROV', 'custLocationModel>STOP_POSTAL'], formatter: '.getCustomerLocationText'}"/>
+										</MultiInput>-->
+											<Input id="CustomerLocationId" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="handleValueHelp"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="G1" name="Origin Ramp" label="Origin Ramp" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="originRamp" items="{originModel>/}" selectedKeys="{DataModel>/SelectedOriginRamps}" selectionChange="reloadData">
+											<core:Item key="{originModel>ORIG_RAMP_DESC}" text="{originModel>ORIG_RAMP_DESC}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="G1" name="Destination Ramp" label="Destination Ramp" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="destinationRamp" items="{destinationModel>/}" selectedKeys="{DataModel>/SelectedDestinationRamps}"
+											selectionChange="reloadData">
+											<core:Item key="{destinationModel>DEST_RAMP_DESC}" text="{destinationModel>DEST_RAMP_DESC}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="G1" name="Live/Spot" label="Live/Spot" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="LiveSpot" items="{spotLiveModel>/}" selectedKeys="{DataModel>/SelectedSpotLive}" selectionChange="reloadData">
+											<core:Item key="{spotLiveModel>STOP_SPOTLIVE}" text="{spotLiveModel>New_STOP_SPOTLIVE}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="G1" name="Equipment" label="Equipment" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="equipment" items="{equipmentModel>/}" selectedKeys="{DataModel>/SelectedEquipment}" selectionChange="reloadData">
+											<core:Item key="{equipmentModel>EQPT_USED}"
+												text="{parts: ['equipmentModel>EQPT_USED', 'equipmentModel>EQPT_DESCRIPTION'], formatter: '.getEquipmentText' }"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="G1" name="Charges" label="Charges" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="charges" items="{chargesModel>/}" selectedKeys="{DataModel>/SelectedCharges}" selectionChange="reloadData">
+											<core:Item key="{chargesModel>CHARGES}" text="{chargesModel>CHARGES}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+				<l:BlockLayoutRow>
+					<l:BlockLayoutCell class="customCellImageBackground" id="chart">
+						<OverflowToolbar id="otbSubheader">
+							<ComboBox id="Charttype" selectedKey="{DataModel>/SelectedPerspective}" selectionChange="reloadData" class="sapUiMediumMarginBegin">
+								<core:Item key="MONTH" text="{i18n>Charttype-MONTH}"/>
+								<core:Item key="WEEK" text="{i18n>Charttype-WEEK}"/>
+								<core:Item key="DAY" text="{i18n>Charttype-DAY_OF_WEEK}"/>
+								<core:Item key="MONTH_AND_DAY" text="{i18n>Charttype-DAY}" enabled="{DataModel>/enableDay}"/>
+								<core:Item key="QUARTER" text="{i18n>Charttype-QUARTER}"/>
+							</ComboBox>
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://excel-attachment" press="onDownload" class="sapUiSmallMarginEnd" tooltip="{i18n>Export-EXCEL}"/>
+							<SegmentedButton selectedKey="{DataModel>/SelectedView}">
+								<items>
+									<SegmentedButtonItem icon="sap-icon://chart-table-view" key="chart-table-view"/>
+									<SegmentedButtonItem icon="sap-icon://table-view" key="table-view"/>
+									<SegmentedButtonItem icon="sap-icon://vertical-bar-chart-2" key="chart-view"/>
+								</items>
+							</SegmentedButton>
+						</OverflowToolbar>
+						<VBox>
+							<viz:VizFrame id="idVizFrame" visible="{=${DataModel>/SelectedView} === 'chart-table-view' || ${DataModel>/SelectedView} === 'chart-view'}"
+								uiConfig="{applicationSet:'fiori'}" vizType="dual_stacked_combination" width="100%" selectData="showTopFiveCustomer">
+								<viz:feeds>
+									<viz.feeds:FeedItem id="valueAxisFeed" uid="valueAxis" type="Measure" values="AverageDriverWaitTime"/>
+									<viz.feeds:FeedItem id="valueAxisFeed2" uid="valueAxis2" type="Measure" values="DriverGT90,DriverLT90"/>
+									<viz.feeds:FeedItem id="feedTargetValues" uid="targetValues" type="Measure" values="AverageDriverWaitTime"/>
+									<viz.feeds:FeedItem id="feedActualValues" uid="actualValues" type="Measure" values="DriverGT90"/>
+									<viz.feeds:FeedItem id="feedAdditionalValues" uid="additionalValues" type="Measure" values="DriverLT90"/>
+								</viz:feeds>
+							</viz:VizFrame>
+							<Table id="ResultTable" visible="{=${DataModel>/SelectedView} === 'chart-table-view' || ${DataModel>/SelectedView} === 'table-view'}"
+								items="{hanaData>/}" inset="true">
+								<headerToolbar>
+									<OverflowToolbar>
+										<Title text="{ path : 'DataModel>/SelectedPerspective', formatter : '.getPerspectvieText'}" level="H2"/>
+										<ToolbarSpacer/>
+									</OverflowToolbar>
+								</headerToolbar>
+								<columns>
+									<Column id="TMonth" visible="{=${DataModel>/SelectedPerspective} === 'MONTH'}">
+										<header>
+											<Label design="Bold" text="{i18n>tableTTT-Month}"/>
+										</header>
+									</Column>
+									<Column id="TWeek" visible="{=${DataModel>/SelectedPerspective} === 'WEEK'}">
+										<header>
+											<Label design="Bold" text="{i18n>tableTTT-Week}"/>
+										</header>
+									</Column>
+									<Column id="TDayofWeek" visible="{=${DataModel>/SelectedPerspective} === 'DAY'}">
+										<header>
+											<Label design="Bold" text="{i18n>tableTTT-Dayofweek}"/>
+										</header>
+									</Column>
+									<Column id="TQuarter" visible="{=${DataModel>/SelectedPerspective} === 'QUARTER'}">
+										<header>
+											<Label design="Bold" text="{i18n>tableTTT-Quarter}"/>
+										</header>
+									</Column>
+									<Column id="TDay" visible="{=${DataModel>/SelectedPerspective} === 'MONTH_AND_DAY'}">
+										<header>
+											<Label design="Bold" text="{i18n>tableTTT-Day}"/>
+										</header>
+									</Column>
+									<Column hAlign="End">
+										<header>
+											<Label design="Bold" text="{i18n>tableDWT_Average}"/>
+										</header>
+									</Column>
+									<Column hAlign="End">
+										<header>
+											<Label design="Bold" text="{i18n>tableDWT_ShipmentLessThan90}"/>
+										</header>
+									</Column>
+									<Column hAlign="End">
+										<header>
+											<Label design="Bold" text="{i18n>tableDWT_ShipmentMoreThan90}"/>
+										</header>
+									</Column>
+									<Column hAlign="End">
+										<header>
+											<Label design="Bold" text="{i18n>tableDWT_Total}"/>
+										</header>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem id="ResultTableColumnListItem">
+										<cells>
+											<Text text="{path : 'hanaData>MONTH',formatter : '.getMonthText'}"/>
+											<Text text="{path : 'hanaData>WEEK',formatter : '.getWeekText'}"/>
+											<!--	<Text text="{path : 'hanaData>DAY',formatter : '.getDayOfWeekText'}"/>-->
+											<Text text="{path : 'hanaData>DAY_DESC'}"/>
+											<Text text="{path : 'hanaData>QUARTER',formatter:'.getQuarterNames'}"/>
+											<Text text="{path : 'hanaData>MONTH_AND_DAY'}"/>
+											<Text text="{path : 'hanaData>AVERAGE_DWT_MINS'}"/>
+											<Text text="{path : 'hanaData>DWT_LT90'}"/>
+											<Text text="{path : 'hanaData>DWT_GT90'}"/>
+											<Text text="{path : 'hanaData>DRIVER_WAIT_TIME_MINS',formatter:'.getroundOffMinutes' }"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</VBox>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+			</l:BlockLayout>
+		</content>
+	</Page>
+</mvc:View>

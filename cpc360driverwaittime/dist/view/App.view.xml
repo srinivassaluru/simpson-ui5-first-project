@@ -1,0 +1,3 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="cp.c360DriverWaitTime.controller.App" displayBlock="true" xmlns="sap.m">
+	<App id="MainApp" defaultTransitionName="show"/>
+</mvc:View>

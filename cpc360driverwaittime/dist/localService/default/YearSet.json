@@ -1,0 +1,111 @@
+[{
+	"GenID": "GenID 1",
+	"YEAR": "YEAR 1",
+	"MONTH": "MONTH 1",
+	"WEEK": 1088,
+	"QUARTER": "QUARTER 1",
+	"DRIVER_WAIT_TIME": 6043.81,
+	"__metadata": {
+		"uri": "YearSet('GenID%201')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.YearSetType"
+	}
+}, {
+	"GenID": "GenID 2",
+	"YEAR": "YEAR 2",
+	"MONTH": "MONTH 2",
+	"WEEK": 6144,
+	"QUARTER": "QUARTER 2",
+	"DRIVER_WAIT_TIME": 4782.39,
+	"__metadata": {
+		"uri": "YearSet('GenID%202')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.YearSetType"
+	}
+}, {
+	"GenID": "GenID 3",
+	"YEAR": "YEAR 3",
+	"MONTH": "MONTH 3",
+	"WEEK": 4403,
+	"QUARTER": "QUARTER 3",
+	"DRIVER_WAIT_TIME": 5449.66,
+	"__metadata": {
+		"uri": "YearSet('GenID%203')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.YearSetType"
+	}
+}, {
+	"GenID": "GenID 4",
+	"YEAR": "YEAR 4",
+	"MONTH": "MONTH 4",
+	"WEEK": 8447,
+	"QUARTER": "QUARTER 4",
+	"DRIVER_WAIT_TIME": 7566.99,
+	"__metadata": {
+		"uri": "YearSet('GenID%204')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.YearSetType"
+	}
+}, {
+	"GenID": "GenID 5",
+	"YEAR": "YEAR 5",
+	"MONTH": "MONTH 5",
+	"WEEK": 5271,
+	"QUARTER": "QUARTER 5",
+	"DRIVER_WAIT_TIME": 8708.98,
+	"__metadata": {
+		"uri": "YearSet('GenID%205')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.YearSetType"
+	}
+}, {
+	"GenID": "GenID 6",
+	"YEAR": "YEAR 6",
+	"MONTH": "MONTH 6",
+	"WEEK": 5090,
+	"QUARTER": "QUARTER 6",
+	"DRIVER_WAIT_TIME": 2500.55,
+	"__metadata": {
+		"uri": "YearSet('GenID%206')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.YearSetType"
+	}
+}, {
+	"GenID": "GenID 7",
+	"YEAR": "YEAR 7",
+	"MONTH": "MONTH 7",
+	"WEEK": 9287,
+	"QUARTER": "QUARTER 7",
+	"DRIVER_WAIT_TIME": 7329.31,
+	"__metadata": {
+		"uri": "YearSet('GenID%207')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.YearSetType"
+	}
+}, {
+	"GenID": "GenID 8",
+	"YEAR": "YEAR 8",
+	"MONTH": "MONTH 8",
+	"WEEK": 7469,
+	"QUARTER": "QUARTER 8",
+	"DRIVER_WAIT_TIME": 5370.75,
+	"__metadata": {
+		"uri": "YearSet('GenID%208')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.YearSetType"
+	}
+}, {
+	"GenID": "GenID 9",
+	"YEAR": "YEAR 9",
+	"MONTH": "MONTH 9",
+	"WEEK": 8491,
+	"QUARTER": "QUARTER 9",
+	"DRIVER_WAIT_TIME": 4086.07,
+	"__metadata": {
+		"uri": "YearSet('GenID%209')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.YearSetType"
+	}
+}, {
+	"GenID": "GenID 10",
+	"YEAR": "YEAR 10",
+	"MONTH": "MONTH 10",
+	"WEEK": 2695,
+	"QUARTER": "QUARTER 10",
+	"DRIVER_WAIT_TIME": 7640.19,
+	"__metadata": {
+		"uri": "YearSet('GenID%2010')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.YearSetType"
+	}
+}]

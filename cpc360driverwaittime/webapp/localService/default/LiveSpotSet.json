@@ -1,0 +1,81 @@
+[{
+	"GenID": "GenID 11",
+	"STOP_SPOTLIVE": "STOP_SPOTLIVE 11",
+	"DRIVER_WAIT_TIME": 9812.9,
+	"__metadata": {
+		"uri": "LiveSpotSet('GenID%2011')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.LiveSpotSetType"
+	}
+}, {
+	"GenID": "GenID 12",
+	"STOP_SPOTLIVE": "STOP_SPOTLIVE 12",
+	"DRIVER_WAIT_TIME": 4927.14,
+	"__metadata": {
+		"uri": "LiveSpotSet('GenID%2012')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.LiveSpotSetType"
+	}
+}, {
+	"GenID": "GenID 13",
+	"STOP_SPOTLIVE": "STOP_SPOTLIVE 13",
+	"DRIVER_WAIT_TIME": 5601.48,
+	"__metadata": {
+		"uri": "LiveSpotSet('GenID%2013')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.LiveSpotSetType"
+	}
+}, {
+	"GenID": "GenID 14",
+	"STOP_SPOTLIVE": "STOP_SPOTLIVE 14",
+	"DRIVER_WAIT_TIME": 733.2,
+	"__metadata": {
+		"uri": "LiveSpotSet('GenID%2014')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.LiveSpotSetType"
+	}
+}, {
+	"GenID": "GenID 15",
+	"STOP_SPOTLIVE": "STOP_SPOTLIVE 15",
+	"DRIVER_WAIT_TIME": 5692.5,
+	"__metadata": {
+		"uri": "LiveSpotSet('GenID%2015')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.LiveSpotSetType"
+	}
+}, {
+	"GenID": "GenID 16",
+	"STOP_SPOTLIVE": "STOP_SPOTLIVE 16",
+	"DRIVER_WAIT_TIME": 572.29,
+	"__metadata": {
+		"uri": "LiveSpotSet('GenID%2016')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.LiveSpotSetType"
+	}
+}, {
+	"GenID": "GenID 17",
+	"STOP_SPOTLIVE": "STOP_SPOTLIVE 17",
+	"DRIVER_WAIT_TIME": 1869.18,
+	"__metadata": {
+		"uri": "LiveSpotSet('GenID%2017')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.LiveSpotSetType"
+	}
+}, {
+	"GenID": "GenID 18",
+	"STOP_SPOTLIVE": "STOP_SPOTLIVE 18",
+	"DRIVER_WAIT_TIME": 2893.69,
+	"__metadata": {
+		"uri": "LiveSpotSet('GenID%2018')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.LiveSpotSetType"
+	}
+}, {
+	"GenID": "GenID 19",
+	"STOP_SPOTLIVE": "STOP_SPOTLIVE 19",
+	"DRIVER_WAIT_TIME": 4516.28,
+	"__metadata": {
+		"uri": "LiveSpotSet('GenID%2019')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.LiveSpotSetType"
+	}
+}, {
+	"GenID": "GenID 20",
+	"STOP_SPOTLIVE": "STOP_SPOTLIVE 20",
+	"DRIVER_WAIT_TIME": 2498.76,
+	"__metadata": {
+		"uri": "LiveSpotSet('GenID%2020')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.LiveSpotSetType"
+	}
+}]

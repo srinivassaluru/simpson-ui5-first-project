@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog 
+		noDataText="{i18n>noDataText}" 
+		title="{i18n>selectCustomer}" 
+		items="{custLocationModel>/}" 
+		rememberSelections="true"
+		showClearButton="true"
+		confirm="handleCustomLocationConfirm" 
+		cancel="handleCustomLocationClose"
+		liveChange="handleCustomLocationSearch"
+		multiSelect="true">
+			<StandardListItem 
+				title="{parts: ['custLocationModel>STOP_CSTMR_NAME', 'custLocationModel>STOP_CITY', 'custLocationModel>STOP_PROV', 'custLocationModel>STOP_POSTAL'], formatter: '.getCustomerLocationText'}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

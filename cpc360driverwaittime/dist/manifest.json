@@ -1,0 +1,169 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "cp.c360DriverWaitTime",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0"
+        },
+        "dataSources": {
+            "hana": {
+                "uri": "/sap/bc/ZODATAPROXY/EHANA_C360/XSODATA/DriverWaitTime.xsodata",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "annotations": [],
+                    "localUri": "localService/default/metadata.xml"
+                }
+            },
+            "crmCommon": {
+                "uri": "/sap/opu/odata/sap/ZCRM_CS_COMMON_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "annotations": [],
+                    "localUri": "localService/default/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "config": {
+            "fullWidth": true
+        },
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "config": {
+            "fullWidth": true
+        },
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "cp.c360DriverWaitTime.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "MainApp"
+        },
+        "dependencies": {
+            "minUI5Version": "1.60.22",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "cp.c360DriverWaitTime.i18n.i18n"
+                },
+                "uri": "i18n/i18n.properties"
+            },
+            "filterModel": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "default": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "default_alias"
+            },
+            "": {
+                "dataSource": "default",
+                "settings": {
+                    "defaultCountMode": "Inline"
+                }
+            },
+            "hana": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request",
+                    "useBatch": true
+                },
+                "dataSource": "hana",
+                "preload": true
+            },
+            "crmCommon": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "crmCommon",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "cp.c360DriverWaitTime.view",
+                "controlAggregation": "pages",
+                "controlId": "MainApp",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteMain",
+                    "pattern": "",
+                    "target": [
+                        "TargetMain"
+                    ]
+                },
+                {
+                    "name": "RouteCompanyMain",
+                    "pattern": "company/{company}",
+                    "target": [
+                        "TargetMain"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetMain": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewName": "Main"
+                }
+            }
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zc360_drv_wait/webapp",
+        "_version": "1.1.0"
+    }
+}

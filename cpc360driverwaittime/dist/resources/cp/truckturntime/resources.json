@@ -1,0 +1,172 @@
+{
+    "resources": [
+        {
+            "name": "../c360DriverWaitTime/localService/default/EquipmentSetParameters.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/YearSet.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/QuarterSetParameters.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/QuarterSet.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/OriginRampSetParameters.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/OriginRampSet.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/LiveSpotSetParameters.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/LiveSpotSet.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/YearSetParameters.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/EquipmentSet.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/DriverWaitTimeSetParameters.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/DriverWaitTimeSet.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/DestinationRampSetParameters.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/DestinationRampSet.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/CustomerLocationSetParameters.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/CustomerLocationSet.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/ChargesSetParameters.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/ChargesSet.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/manifest.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/model/models.js"
+        },
+        {
+            "name": "../c360DriverWaitTime/model/SmartDateModel.js"
+        },
+        {
+            "name": "../c360DriverWaitTime/model/Formatter.js"
+        },
+        {
+            "name": "../c360DriverWaitTime/model/FilterUtil.js"
+        },
+        {
+            "name": "../c360DriverWaitTime/model/ExcelUtil.js"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/mockserver.js"
+        },
+        {
+            "name": "../c360DriverWaitTime/controller/Main.controller.js"
+        },
+        {
+            "name": "../c360DriverWaitTime/controller/App.controller.js"
+        },
+        {
+            "name": "../c360DriverWaitTime/serviceBinding.js"
+        },
+        {
+            "name": "../c360DriverWaitTime/Component.js"
+        },
+        {
+            "name": "../c360DriverWaitTime/manifest-bundle.zip"
+        },
+        {
+            "name": "../c360DriverWaitTime/Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "../c360DriverWaitTime/Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../c360DriverWaitTime/model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../c360DriverWaitTime/model/SmartDateModel-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../c360DriverWaitTime/model/Formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../c360DriverWaitTime/model/FilterUtil-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../c360DriverWaitTime/model/ExcelUtil-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/mockserver-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../c360DriverWaitTime/controller/Main-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../c360DriverWaitTime/controller/App-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../c360DriverWaitTime/serviceBinding-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "../c360DriverWaitTime/view/fragments/CustomerLocation.fragment.xml"
+        },
+        {
+            "name": "../c360DriverWaitTime/i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "../c360DriverWaitTime/localService/default/metadata.xml"
+        },
+        {
+            "name": "../c360DriverWaitTime/view/Main.view.xml"
+        },
+        {
+            "name": "../c360DriverWaitTime/view/App.view.xml"
+        },
+        {
+            "name": "../c360DriverWaitTime/css/style.css"
+        },
+        {
+            "name": "../c360DriverWaitTime/index.html"
+        },
+        {
+            "name": "../c360DriverWaitTime/extended_runnable_file.html"
+        }
+    ]
+}

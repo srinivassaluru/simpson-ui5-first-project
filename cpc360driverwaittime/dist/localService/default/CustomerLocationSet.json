@@ -1,0 +1,111 @@
+[{
+	"GenID": "GenID 1",
+	"STOP_CITY": "STOP_CITY 1",
+	"STOP_PROV": "STOP_PROV 1",
+	"STOP_POSTAL": "STOP_POSTAL 1",
+	"STOP_CSTMR_NAME": "STOP_CSTMR_NAME 1",
+	"DRIVER_WAIT_TIME": 1088.57,
+	"__metadata": {
+		"uri": "CustomerLocationSet('GenID%201')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.CustomerLocationSetType"
+	}
+}, {
+	"GenID": "GenID 2",
+	"STOP_CITY": "STOP_CITY 2",
+	"STOP_PROV": "STOP_PROV 2",
+	"STOP_POSTAL": "STOP_POSTAL 2",
+	"STOP_CSTMR_NAME": "STOP_CSTMR_NAME 2",
+	"DRIVER_WAIT_TIME": 6144.81,
+	"__metadata": {
+		"uri": "CustomerLocationSet('GenID%202')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.CustomerLocationSetType"
+	}
+}, {
+	"GenID": "GenID 3",
+	"STOP_CITY": "STOP_CITY 3",
+	"STOP_PROV": "STOP_PROV 3",
+	"STOP_POSTAL": "STOP_POSTAL 3",
+	"STOP_CSTMR_NAME": "STOP_CSTMR_NAME 3",
+	"DRIVER_WAIT_TIME": 4403.83,
+	"__metadata": {
+		"uri": "CustomerLocationSet('GenID%203')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.CustomerLocationSetType"
+	}
+}, {
+	"GenID": "GenID 4",
+	"STOP_CITY": "STOP_CITY 4",
+	"STOP_PROV": "STOP_PROV 4",
+	"STOP_POSTAL": "STOP_POSTAL 4",
+	"STOP_CSTMR_NAME": "STOP_CSTMR_NAME 4",
+	"DRIVER_WAIT_TIME": 8447.5,
+	"__metadata": {
+		"uri": "CustomerLocationSet('GenID%204')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.CustomerLocationSetType"
+	}
+}, {
+	"GenID": "GenID 5",
+	"STOP_CITY": "STOP_CITY 5",
+	"STOP_PROV": "STOP_PROV 5",
+	"STOP_POSTAL": "STOP_POSTAL 5",
+	"STOP_CSTMR_NAME": "STOP_CSTMR_NAME 5",
+	"DRIVER_WAIT_TIME": 5271.63,
+	"__metadata": {
+		"uri": "CustomerLocationSet('GenID%205')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.CustomerLocationSetType"
+	}
+}, {
+	"GenID": "GenID 6",
+	"STOP_CITY": "STOP_CITY 6",
+	"STOP_PROV": "STOP_PROV 6",
+	"STOP_POSTAL": "STOP_POSTAL 6",
+	"STOP_CSTMR_NAME": "STOP_CSTMR_NAME 6",
+	"DRIVER_WAIT_TIME": 5090.7,
+	"__metadata": {
+		"uri": "CustomerLocationSet('GenID%206')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.CustomerLocationSetType"
+	}
+}, {
+	"GenID": "GenID 7",
+	"STOP_CITY": "STOP_CITY 7",
+	"STOP_PROV": "STOP_PROV 7",
+	"STOP_POSTAL": "STOP_POSTAL 7",
+	"STOP_CSTMR_NAME": "STOP_CSTMR_NAME 7",
+	"DRIVER_WAIT_TIME": 9287.05,
+	"__metadata": {
+		"uri": "CustomerLocationSet('GenID%207')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.CustomerLocationSetType"
+	}
+}, {
+	"GenID": "GenID 8",
+	"STOP_CITY": "STOP_CITY 8",
+	"STOP_PROV": "STOP_PROV 8",
+	"STOP_POSTAL": "STOP_POSTAL 8",
+	"STOP_CSTMR_NAME": "STOP_CSTMR_NAME 8",
+	"DRIVER_WAIT_TIME": 7469.01,
+	"__metadata": {
+		"uri": "CustomerLocationSet('GenID%208')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.CustomerLocationSetType"
+	}
+}, {
+	"GenID": "GenID 9",
+	"STOP_CITY": "STOP_CITY 9",
+	"STOP_PROV": "STOP_PROV 9",
+	"STOP_POSTAL": "STOP_POSTAL 9",
+	"STOP_CSTMR_NAME": "STOP_CSTMR_NAME 9",
+	"DRIVER_WAIT_TIME": 8491.91,
+	"__metadata": {
+		"uri": "CustomerLocationSet('GenID%209')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.CustomerLocationSetType"
+	}
+}, {
+	"GenID": "GenID 10",
+	"STOP_CITY": "STOP_CITY 10",
+	"STOP_PROV": "STOP_PROV 10",
+	"STOP_POSTAL": "STOP_POSTAL 10",
+	"STOP_CSTMR_NAME": "STOP_CSTMR_NAME 10",
+	"DRIVER_WAIT_TIME": 2695.42,
+	"__metadata": {
+		"uri": "CustomerLocationSet('GenID%2010')",
+		"type": "ZCPCSTMR360.XSODATA.DriverWaitTime.CustomerLocationSetType"
+	}
+}]
